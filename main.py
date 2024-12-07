@@ -7,12 +7,14 @@ from aiogram.types import BotCommand, BotCommandScopeDefault
 from config.config import TOKEN
 
 from app.handler import router
+from app.profile import router_profile
 
 from datetime import datetime as dt, timedelta
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
 dp.include_router(router)
+dp.include_router(router_profile)
 
 
 async def main():
