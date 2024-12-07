@@ -39,7 +39,7 @@ async def register_name(message: Message, state: FSMContext):
     await state.update_data(id=message.from_user.id)
     await state.update_data(username_th=message.from_user.username)
     await state.set_state(Register.phone)
-    await message.answer("Введи свое имя")
+    await message.answer("Введи свой телефон")
 
 
 @router.message(Register.phone)
