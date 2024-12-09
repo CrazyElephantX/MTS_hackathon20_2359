@@ -1,48 +1,39 @@
 "use client";
+import { Link } from "@/components";
 import IconGame from "@/icons/IconGame";
 import IconProfile from "@/icons/IconProfile";
 import { Tabbar } from "@telegram-apps/telegram-ui";
-import {useEffect} from "react";
-import {usePathname, useRouter} from "next/navigation";
+import { usePathname } from "next/navigation";
 
 export function Nav() {
-  const router = useRouter();
-  const pathname = usePathname();
-
-  useEffect(() => {
-    router.push(pathname);
-  }, []);
-
   const tabs = [
     {
       id: 0,
       text: "Profile",
-      Icon: IconProfile,
       path: "/profile",
+      Icon: IconProfile,
     },
     {
       id: 1,
       text: "Game",
-      Icon: IconGame,
       path: "/",
+      Icon: IconGame,
     },
   ];
 
+  const pathname = usePathname();
+
   return (
-    <>
-      <Tabbar style={{zIndex: 9999}}>  {//TODO: Возможно лучше избежать zIndex
-         }
+    <nav>
+      <Tabbar>
         {tabs.map(({ id, text, Icon, path }) => (
-          <Tabbar.Item
-            key={id}
-            text={text}
-            selected={pathname === path}
-            onClick={() => router.push(path)}
-          >
-            <Icon />
+          <Tabbar.Item key={id} text={text} selected={path === pathname}>
+            <Link href={path}>
+              <Icon />
+            </Link>
           </Tabbar.Item>
         ))}
       </Tabbar>
-    </>
+    </nav>
   );
 }

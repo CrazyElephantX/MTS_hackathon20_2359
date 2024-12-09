@@ -23,9 +23,10 @@ export default async function RootLayout({ children }: PropsWithChildren) {
       <body>
         <I18nProvider>
           <Root>
-            {children}
-
-            <Nav></Nav>
+            <div className="h-[100dvh] grid grid-rows-[1fr_86px]">
+              <main>{children}</main>
+              <Nav></Nav>
+            </div>
           </Root>
         </I18nProvider>
       </body>

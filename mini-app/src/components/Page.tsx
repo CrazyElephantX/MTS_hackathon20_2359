@@ -7,12 +7,14 @@ import { useRouter } from "next/navigation";
 export function Page({
   children,
   back = true,
+  className = "",
 }: PropsWithChildren<{
   /**
    * True if it is allowed to go back from this page.
    * @default true
    */
   back?: boolean;
+  className?: string;
 }>) {
   const router = useRouter();
 
@@ -30,6 +32,9 @@ export function Page({
     });
   }, [router]);
 
-  return <article className="h-[100dvh]">{children}</article>;
+  return (
+    <article className={"h-full overflow-y-scroll " + className}>
+      {children}
+    </article>
+  );
 }
-

@@ -1,23 +1,40 @@
 "use client";
 
-import { Section, Cell, Image, List } from "@telegram-apps/telegram-ui";
 import { useTranslations } from "next-intl";
 
-import { Link } from "@/components/Link/Link";
-import { LocaleSwitcher } from "@/components/LocaleSwitcher/LocaleSwitcher";
 import { Page } from "@/components/Page";
 
-import tonSvg from "./_assets/ton.svg";
 import WiFi from "./WiFi";
+import { Button, Modal, Placeholder } from "@telegram-apps/telegram-ui";
+import Counter from "./Counter";
+import IconCheck from "@/icons/IconCheck";
+import { useSignal, themeParams } from "@telegram-apps/sdk-react";
+import { ModalHeader } from "@telegram-apps/telegram-ui/dist/components/Overlays/Modal/components/ModalHeader/ModalHeader";
 
 export default function Home() {
   const t = useTranslations("i18n");
 
   return (
-    <Page back={false}>
-      <section className="h-full flex items-center justify-center">
+    <Page
+      back={false}
+      className="grid grid-rows-[1fr_10fr_1fr] grid-cols-1 px-2 pb-4 items-center justify-center"
+    >
+      <div></div>
+      <div className="flex flex-col items-center">
+        <Counter></Counter>
         <WiFi></WiFi>
-      </section>
+      </div>
+      <div className="flex justify-start">
+        <Modal
+          trigger={
+            <Button before={IconCheck()} size="l">
+              Achievements
+            </Button>
+          }
+        >
+          <Placeholder description="Description" header="Title"></Placeholder>
+        </Modal>
+      </div>
     </Page>
   );
 }
