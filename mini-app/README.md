@@ -1,7 +1,7 @@
-# Telegram Mini Apps Next.js Template
+# Mini-app — Frontend
 
-This template demonstrates how developers can implement a web application on the
-Telegram Mini Apps platform using the following technologies and libraries:
+This project scaffolded from "Telegram Mini Apps Next.js Template".
+That using the following technologies and libraries:
 
 - [Next.js](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
@@ -41,12 +41,6 @@ To run a script, use the `pnpm run` command:
 pnpm run {script}
 # Example: pnpm run build
 ```
-
-## Create Bot and Mini App
-
-Before you start, make sure you have already created a Telegram Bot. Here is
-a [comprehensive guide](https://docs.telegram-mini-apps.com/platform/creating-new-app)
-on how to do it.
 
 ## Run
 
@@ -139,3 +133,4 @@ more details.
 - [Platform documentation](https://docs.telegram-mini-apps.com/)
 - [@telegram-apps/sdk-react documentation](https://docs.telegram-mini-apps.com/packages/telegram-apps-sdk-react)
 - [Telegram developers community chat](https://t.me/devs)
+

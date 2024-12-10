@@ -38,5 +38,3 @@ next-env.d.ts
 .idea
 
 certificates
-
-pnpm-lock.yaml
