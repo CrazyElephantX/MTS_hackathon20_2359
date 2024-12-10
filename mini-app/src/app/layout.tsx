@@ -24,7 +24,7 @@ export default async function RootLayout({ children }: PropsWithChildren) {
         <I18nProvider>
           <Root>
             <div className="h-[100dvh] grid grid-rows-[1fr_86px]">
-              <main>{children}</main>
+              <main className="overflow-scroll">{children}</main>
               <Nav></Nav>
             </div>
           </Root>
