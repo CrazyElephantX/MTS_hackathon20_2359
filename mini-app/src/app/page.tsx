@@ -3,13 +3,7 @@
 import { useTranslations } from "next-intl";
 
 import { Page } from "@/components/Page";
-
-import WiFi from "./WiFi";
-import { Button, Modal, Placeholder } from "@telegram-apps/telegram-ui";
-import Counter from "./Counter";
-import IconCheck from "@/icons/IconCheck";
-import { useSignal, themeParams } from "@telegram-apps/sdk-react";
-import { ModalHeader } from "@telegram-apps/telegram-ui/dist/components/Overlays/Modal/components/ModalHeader/ModalHeader";
+import { Counter, WiFi } from "@/widgets";
 
 export default function Home() {
   const t = useTranslations("i18n");
@@ -24,17 +18,7 @@ export default function Home() {
         <Counter></Counter>
         <WiFi></WiFi>
       </div>
-      <div className="flex justify-start">
-        <Modal
-          trigger={
-            <Button before={IconCheck()} size="l">
-              Achievements
-            </Button>
-          }
-        >
-          <Placeholder description="Description" header="Title"></Placeholder>
-        </Modal>
-      </div>
+      <div className="flex justify-start"></div>
     </Page>
   );
 }
