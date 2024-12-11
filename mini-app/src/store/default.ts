@@ -1,17 +1,17 @@
 export const default_targets: Array<Target> = [
   {
     count_clicks: 10,
-    title: "Your first target",
-    description: "UHU you did it",
+    title: "Твоя первая цель",
+    description: "Ты получишь 10 очков",
   },
   {
     count_clicks: 100,
-    title: "Your second target",
-    description: "Keep it up",
+    title: "Твоя вторая цель",
+    description: "Ты получишь 100 очков",
   },
   {
     count_clicks: 1000,
-    title: "Your third target",
-    description: "This is very serious",
+    title: "Мега цель",
+    description: "7 дней киона",
   },
 ];
