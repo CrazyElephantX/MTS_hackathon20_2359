@@ -7,8 +7,10 @@ from aiogram.fsm.context import FSMContext
 from datetime import datetime as dt
 
 import app.keyboard as kb
+from database.db import Database
 
 router = Router()
+database = Database('None')
 
 
 class Register(StatesGroup):
@@ -22,8 +24,11 @@ class Register(StatesGroup):
 async def command_start_handler(message: Message, state: FSMContext, bot: Bot):
     await state.clear()
     # Разное ссобщение в зависимости наличия пользователя с id
-    await message.answer("Привет, Я мини-игра от МТС! 👋\nСкорее давай играть!")
-    await message.answer("Регистрируйся скорее!", reply_markup=kb.start_register)
+    if database.is_user_exist(message.from_user.id):
+        await message.answer("Рад тебя видеть, ты уже зарегистрирован!", reply_markup=kb.main)
+    else:
+        await message.answer("Привет, Я мини-игра от МТС! 👋\nСкорее давай играть!")
+        await message.answer("Регистрируйся скорее!", reply_markup=kb.start_register)
 
 
 @router.callback_query(F.data == 'start_register')
@@ -60,9 +65,11 @@ async def register_pass(callback: CallbackQuery, state: FSMContext, bot: Bot):
     data = await state.get_data()
 
     # Записываем в бд
+    print(data)
+    database.add_user(data)
     # Развилка для реферальных и самостоятельный регов для разных сообщений
     await callback.message.answer("Ты успешно зарегестрирован! ⚡️\n",
-                                      reply_markup=kb.main)
+                                  reply_markup=kb.main)
     await state.clear()
 
 

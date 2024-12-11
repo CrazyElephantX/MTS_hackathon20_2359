@@ -2,9 +2,7 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMar
 from aiogram.types.web_app_info import WebAppInfo
 
 
-main = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text='Запустить игру')],
-                                     [KeyboardButton(text='Обмен монет')],
-                                     [KeyboardButton(text='Профиль')]],
+main = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text='Запустить игру')]],
                            resize_keyboard=True,
                            input_field_placeholder='Выбери раздел нижу...')
 
