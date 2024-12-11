@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background: var(--tg-theme-secondary-bg-color, white);
+@layer base {
+  body {
+    background: var(--tg-theme-secondary-bg-color, white);
+  }
 }

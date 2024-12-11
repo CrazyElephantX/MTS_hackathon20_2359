@@ -1,19 +1,14 @@
 "use client";
+import Ripple from "@/components/Ripple";
 import { useAppStore } from "@/store/store";
-import { postEvent, themeParams, useSignal } from "@telegram-apps/sdk-react";
-import { Button } from "@telegram-apps/telegram-ui";
 
 export default function WiFi({ className = "" }: { className?: string }) {
   const click = useAppStore((state) => state.click);
   const color = (lightness: number) => `rgba(255,255,255,${lightness})`;
 
-  const tp = useSignal(themeParams.state);
-  console.log(tp);
-
   return (
-    <Button
-      className={"size-fit p-8 bg-[--green] rounded-full border- " + className}
-      mode="plain"
+    <button
+      className={"p-8 rounded-full relative overflow-hidden " + className}
       onClick={click}
     >
       <svg
@@ -36,6 +31,7 @@ export default function WiFi({ className = "" }: { className?: string }) {
           d="M360.611,112.293c-47.209-48.092-110.305-74.577-177.665-74.577c-67.357,0-130.453,26.485-177.664,74.579 c-7.135,7.269-7.027,18.944,0.241,26.079c3.59,3.524,8.255,5.282,12.918,5.281c4.776,0,9.551-1.845,13.161-5.522 c40.22-40.971,93.968-63.534,151.344-63.534c57.379,0,111.127,22.563,151.343,63.532c7.136,7.269,18.812,7.376,26.08,0.242 C367.637,131.238,367.745,119.562,360.611,112.293z"
         ></path>
       </svg>
-    </Button>
+      <Ripple></Ripple>
+    </button>
   );
 }

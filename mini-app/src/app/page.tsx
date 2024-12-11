@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 
 import { Page } from "@/components/Page";
-import { Counter, WiFi } from "@/widgets";
+import { Achivements, Counter, WiFi } from "@/widgets";
 
 export default function Home() {
   const t = useTranslations("i18n");
@@ -16,9 +16,12 @@ export default function Home() {
       <div></div>
       <div className="flex flex-col items-center">
         <Counter></Counter>
+
         <WiFi></WiFi>
       </div>
-      <div className="flex justify-start"></div>
+      <div className="flex justify-start">
+        <Achivements></Achivements>
+      </div>
     </Page>
   );
 }

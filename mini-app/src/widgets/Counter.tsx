@@ -4,5 +4,5 @@ import AnimatedNumbers from "react-animated-numbers";
 
 export default function Counter() {
   const count_clicks = useAppStore((state) => state.count_clicks);
-  return <div className="text-3xl">{count_clicks}</div>;
+  return <div className="text-xl">{count_clicks}</div>;
 }
