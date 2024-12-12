@@ -8,7 +8,8 @@ from config.config import TOKEN
 
 from app.handler import router
 from app.profile import router_profile
-from app.game import router_game
+from app.mts import router_mts
+from app.notify import router_notify
 
 
 from datetime import datetime as dt, timedelta
@@ -17,7 +18,8 @@ bot = Bot(token=TOKEN)
 dp = Dispatcher()
 dp.include_router(router)
 dp.include_router(router_profile)
-dp.include_router(router_game)
+dp.include_router(router_mts)
+dp.include_router(router_notify)
 
 
 async def main():

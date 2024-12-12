@@ -8,11 +8,11 @@ from datetime import datetime as dt
 
 import app.keyboard as kb
 
-router_game = Router()
+router_mts = Router()
 
 
-@router_game.message(F.text == 'Запустить игру')
+@router_mts.message(F.text == 'Мой МТС')
 async def profile(message: Message, bot: Bot, state: FSMContext):
     await state.clear()
 
-    await message.answer("game")
+    await message.answer("Тут ты найдешь много интересного.")
