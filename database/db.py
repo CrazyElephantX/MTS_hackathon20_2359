@@ -24,3 +24,14 @@ class Database:
             self.cursor.execute(f'SELECT * FROM public.users WHERE telegram_id = {user_id}')
             result = self.cursor.fetchall()
             return bool(len(result))
+
+    def get_notify(self, user_id):
+        with self.connection:
+            self.cursor.execute(f'SELECT notify FROM public.users WHERE telegram_id = {user_id}')
+            result = self.cursor.fetchall()
+            return result
+
+    def new_notify(self, user_id, new):
+        with self.connection:
+            self.cursor.execute(f'UPDATE public.users SET notify = {new} WHERE telegram_id = {user_id}')
+            self.connection.commit()
