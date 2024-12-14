@@ -16,4 +16,4 @@
 
 ## Документация
 
-- [Папка с документами v.1](https://github.com/FedorAgafonov/hackathon2359/tree/main/documentation)
+- [Папка с документами v.1](https://github.com/CrazyElephantX/MTS_hackathon20_2359/tree/main/documentation)
